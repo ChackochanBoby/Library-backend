@@ -18,4 +18,12 @@ const login = async (req, res) => {
         res.status(401).send("Unauthorized access")
     }
 }
-module.exports = { login }
+const verifyLogin = (req, res) => {
+    if (req.cookies.token) {
+        res.send("logged in")
+    }
+    else {
+        res.status(401).send("not logged in")
+    }
+}
+module.exports = { login, verifyLogin }

@@ -8,7 +8,7 @@ const authorRoutes = require("./routes/authorRoutes");
 const userRoutes = require("./routes/userRoutes")
 const authRoutes = require("./routes/authRoutes")
 const { mongoose } = require("mongoose");
-
+const cookieParser = require('cookie-parser')
 //use cors for every routes
 app.use(cors({
   credentials: true,
@@ -21,6 +21,7 @@ app.use(cors({
 
 //get body of requests
 app.use(express.json());
+app.use(cookieParser())
 
 app.use("/books", bookRoutes);
 app.use("/authors", authorRoutes);
