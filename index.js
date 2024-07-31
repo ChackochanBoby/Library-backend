@@ -12,7 +12,7 @@ const { mongoose } = require("mongoose");
 //use cors for every routes
 app.use(cors({
   credentials: true,
-  origin:process.env.ENVIRONMENT==="development"?["http://localhost:5173","http://localhost:5174"]:[]
+  origin:process.env.ENVIRONMENT==="development"?["http://localhost:5173","http://localhost:5174"]:["https://library-frontend-ruddy.vercel.app/"]
 }));
 
 //get body of requests
