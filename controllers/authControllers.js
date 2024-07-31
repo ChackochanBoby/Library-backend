@@ -11,7 +11,7 @@ const login = async (req, res) => {
     const passwordsMatch = bcrypt.compareSync(password, user.password)
     if (passwordsMatch) {
         const token = jwt.sign( { _id:user._id, email:user.email }, process.env.TOKEN_SECRET_KEY );
-        res.cookie("token", token,{httpOnly:true,secure:process.env.ENVIRONMENT==="development"?false:true,maxAge:1*60*60*1000,sameSite:"lax"})
+        res.cookie("token", token,{httpOnly:true,secure:process.env.ENVIRONMENT==="development"?false:true,maxAge:1*60*60*1000,sameSite:"none"})
         res.send("logged in")
     }
     else {
