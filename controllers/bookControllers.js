@@ -24,5 +24,9 @@ const deleteBook = async (req, res) => {
   await Book.findByIdAndDelete(req.params.bookId)
   res.send("deleted")
 };
+const getFeaturedBooks = async (req, res) => {
+  const featuredBooks = await Book.find({ isFeatured: true })
+  res.send(featuredBooks)
+}
 
-module.exports = { getAllBooks, getBookById, addBook, updateBook, deleteBook };
+module.exports = { getAllBooks, getBookById, addBook, updateBook, deleteBook, getFeaturedBooks };

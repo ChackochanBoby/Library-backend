@@ -6,10 +6,14 @@ const {
   addBook,
   updateBook,
   deleteBook,
+  getFeaturedBooks
 } = require("../controllers/bookControllers");
 
 // setting route to get all books
-router.get("/",getAllBooks);
+router.get("/", getAllBooks);
+
+//get featured books
+router.get("/featured", getFeaturedBooks)
 
 // setting route to get book by id 
 router.get("/:bookId", getBookById)
@@ -21,6 +25,8 @@ router.post("/", addBook)
 router.patch("/:bookId", updateBook)
 
 //setting route to delete book
-router.delete("/:bookId",deleteBook)
+router.delete("/:bookId", deleteBook)
+
+
 
 module.exports = router;
