@@ -19,11 +19,6 @@ const login = async (req, res) => {
     }
 }
 const verifyLogin = (req, res) => {
-    if (req.cookies.token) {
-        res.send("logged in")
-    }
-    else {
-        res.status(401).send("not logged in")
-    }
+    res.send(req.data)
 }
 module.exports = { login, verifyLogin }
