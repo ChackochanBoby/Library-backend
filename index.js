@@ -14,7 +14,7 @@ app.use(cors({
   credentials: true,
   origin: process.env.ENVIRONMENT === "development"
     ? ["http://localhost:5173", "http://localhost:5174"]
-    : "https://library-frontend-ruddy.vercel.app",
+    : "https://library-frontend-chackochan-bobys-projects.vercel.app",
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
